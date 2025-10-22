@@ -4,7 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "trap 'npm run services:down' INT TERM; npm run services:up && nodemon server.js",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "services:stop": "docker compose stop",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest --runInBand --verbose",
