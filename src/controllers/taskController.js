@@ -1,4 +1,4 @@
-class TarefaController {
+class TaskController {
   static listarTarefas = async (req, res) => {
     try {
       //const resultFind = await tarefas.find();
@@ -24,4 +24,4 @@ class TarefaController {
   };
 }
 
-export default TarefaController;
+export default TaskController;
